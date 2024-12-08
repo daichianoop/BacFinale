@@ -1,0 +1,138 @@
+  .titlelogo {  
+    font-family: "Poppins"; 
+    text-align: center;  
+    color: #fff;  
+    display: flex;  
+    flex-direction: column;  
+    align-items: center;  
+    justify-content: center;  
+    letter-spacing: 1px;  
+    line-height: 2;  
+  }  
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+    outline: none;
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+  }
+  .navbar {  
+    font-family: "Poppins";
+    display: flex;  
+    align-items: center;  
+    justify-content: space-between;  
+    padding: 20px 0;  
+    width: 100%;  
+  }  
+  
+  .hamburger {  
+    display: none;  
+    color: #d7d7d7;  
+    background-color: #1f1d2b;  
+    border: none;  
+    margin-right: 10px;  
+  }  
+  
+  .createbtn {  
+    font-family: "Poppins";
+    cursor: pointer;  
+    margin-right: 5px;  
+    width: 115px;  
+    height: 45px;  
+    color: #ffffff;  
+    font-family: "Poppins";  
+    font-style: normal;  
+    border: 1px solid #d7d7d7;  
+    border-radius: 10px;  
+    font-weight: 700;  
+    font-size: 12px;  
+    transition: all 500ms;  
+    background-size: auto;  
+    background-image: url(img/2.gif);  
+    background-position: top;  
+  }  
+  
+  .createbtn:hover {  
+    font-family: "Poppins";
+    border: 1px solid #d7d7d7;  
+    background-position: 0%;  
+  }  
+  
+  .navlink {  
+    font-family: "Poppins";  
+    font-style: normal;  
+    font-weight: 500;  
+    font-size: 15px;  
+    color: white;  
+    transition: all 100ms;  
+    font-weight: bold;  
+  }  
+  
+  .navlink:hover {  
+    color: #ffffffb0;  
+    padding-bottom: 2px;  
+    border-bottom: 2px solid #ffffffb0;  
+    cursor: pointer;  
+  }  
+  
+  @media screen and (max-width: 925px) {  
+    .navlinkwrap {  
+      display: none;  
+    }  
+  
+    .buttonwrap {  
+      display: none;  
+    }  
+  
+    .hamburger {  
+      display: flex !important;  
+      align-items: center;  
+    }  
+  }  
+  
+  @media screen and (max-width: 600px) {  
+    .landingpage {  
+      padding: 0 20px;  
+    }  
+  }
+  @media screen and (max-width: 925px) {
+    .navlinkwrap {
+      display: none;
+    }
+  
+    .buttonwrap {
+      display: none;
+    }
+  
+    .hamburger {
+      display: flex !important;
+      align-items: center;
+    }
+  
+    .started-slimtext {
+      text-align: center;
+    }
+  }
+  
+  .navbar .navlink {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    color: white;
+    transition: all 100ms;
+  }
+  .navlink {
+    font-weight: bold;
+  }
+  .navlink:hover {
+    color: #ffffffb0;
+    padding-bottom: 2px;
+    border-bottom: 2px solid #ffffffb0;
+    cursor: pointer;
+  }
+  .navbar .navlink:not(:last-child) {
+    margin-right: 32px;
+  }
+  

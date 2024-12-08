@@ -1,0 +1,744 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    height: 100%;
+    overflow-x: hidden;
+    background: #36454f;
+}
+
+
+
+
+/*#bgVideo {*/
+/*    position: fixed;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    min-width: 100%;*/
+/*    min-height: 100%;*/
+/*    width: auto;*/
+/*    height: auto;*/
+    /*z-index: 0; */
+/*    object-fit: cover; */
+    /*filter: blur(8px);*/
+/*    opacity: 0.75; */
+/*}*/
+
+.main-title {
+    text-align: center;
+    padding: 50px 0;
+    font-size: 48px;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+    color:white;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hero-image-container {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.hero-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: 250px;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+
+hr {
+    border: none;
+    height: 5px;
+    background-color: #333;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.timeline-line {
+    position: absolute;
+    width: 5px;
+    background: #ddd;
+    top: 0;
+    bottom:50vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.timeline-line-fill {
+    position: absolute;
+    width: 100%;
+    background: #333;
+    height: 0;
+    z-index: 2;
+    transition: height 0.5s ease; 
+}
+
+.event-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 100px 0;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s, transform 0.6s;
+}
+
+.event-date {
+    position: absolute;
+    top: -40px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+.event-block {
+    width: 400px;
+    height: 400px;
+    backdrop-filter: blur(11px) saturate(159%);
+    -webkit-backdrop-filter: blur(11px) saturate(159%);
+    background-color: rgba(0, 0, 0, 0.54);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transform-origin: center;
+    transition: transform 0.6s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    margin-right: 5vw;
+    margin-left: 5vw;
+}
+
+
+
+.event-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.event-actions {
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.more-info-btn {
+    padding: 12px 30px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.more-info-btn:hover {
+    background: #555;
+}
+
+.event-description-left {
+    width: 400px;
+    line-height: 1.8;
+    font-size: 16px;
+    backdrop-filter: blur(10px) saturate(159%);
+    -webkit-backdrop-filter: blur(10px) saturate(159%);
+    background: rgba(0, 0, 0, 0.54);
+    padding: 20px;
+    border-radius: 12px;
+    height: auto;
+    margin-left: 5%;
+    color: white; /* Text color */
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+
+.event-description-right {
+    width: 400px;
+    line-height: 1.8;
+    font-size: 16px;
+    backdrop-filter: blur(10px) saturate(159%);
+    -webkit-backdrop-filter: blur(10px) saturate(159%);
+    background: rgba(0, 0, 0, 0.54);
+    padding: 20px;
+    border-radius: 10px;
+    height: auto;
+    margin-right: 5%;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.event-container:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+
+@media (max-width: 768px) {
+
+   
+    .event-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 100px 0;
+        margin-left:15vw;
+    }
+
+    
+.event-container:nth-child(even) {
+    flex-direction: column;
+}
+
+    .event-date {
+        top: -50px;
+        font-size: 20px;
+    }
+    .event-block {
+        width: 90%;
+        height: auto;
+        margin: 0 auto;
+    }
+    .event-description-left, .event-description-right {
+        width: 90%;
+        margin: 0 auto;
+        padding: 10px;
+    }
+    .main-title {
+        font-size: 36px;
+    }
+    .more-info-btn {
+        padding: 10px 20px;
+    }
+    
+    .timeline-line {
+      left: 10%;
+    }
+    
+    .event-page-title{
+        font-size:16px;
+    }
+
+    .event-block{
+        width: 90%;
+    }
+
+}
+
+.event-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 95%;
+    height: 95%;
+    background: #36454F;
+    z-index: 1000;
+    display: none;
+    overflow-y: auto;
+    border-radius:10px;
+}
+
+.event-page.active {
+    display: block;
+    animation: slideIn 0.5s forwards;
+}
+
+.event-page.exit {
+    animation: slideOut 0.5s forwards;
+}
+
+@keyframes slideIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideOut {
+    from { transform: scale(1); opacity: 1; }
+    to { transform: scale(0.8); opacity: 0; }
+}
+
+.event-page-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+
+.event-page-title {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.event-page-image {
+    max-width: 100%; /* Change to a percentage */
+    height: 250px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+.event-page-description {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    max-width: 80%;
+    text-align: center;
+    color:White;
+}
+
+
+
+
+
+
+
+
+/* Community Page CSS*/
+
+h1  {
+    color: white;
+    margin-top:15vh;
+    font-size:45px;
+}
+
+.animated-line{
+    color: red;
+}
+
+.voyage-title{
+    color: white;
+}
+
+.image-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 20px 0;
+}
+
+.slider-image {
+    min-width: 300px;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.close-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background: red;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s, transform 0.6s;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-out {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s, transform 0.6s;
+}
+
+.scroll-out.hidden {
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+/* Font imports */
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;500;600;700;800;900&family=Clash+Display:wght@200;300;400;500;600;700&display=swap");
+
+:root {
+    --slide-width: min(25vw, 300px);
+    --slide-aspect: 2 / 3;
+    --slide-transition-duration: 800ms;
+    --slide-transition-easing: ease;
+    --font-archivo: "Archivo", sans-serif;
+    --font-clash-display: "Clash Display", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    overflow: auto;
+    height:100%;
+    width:100%;
+    background: rgba(0, 0, 0, 0.787);
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+    border: none;
+}
+
+/* Slider styles */
+.slider {
+    width: calc(3 * var(--slide-width));
+    height: calc(2 * var(--slide-width) * 3 / 2);
+    display: flex;
+    align-items: center;
+}
+
+.slider--btn {
+    --size: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.7;
+    transition: opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    z-index: 999;
+}
+
+.slider--btn svg {
+    width: var(--size);
+    height: var(--size);
+    stroke: white;
+}
+
+.slider--btn:hover {
+    opacity: 1;
+}
+
+.slides__wrapper {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.slides__wrapper > * {
+    grid-area: 1 / -1;
+}
+
+.slides,
+.slides--infos {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    display: grid;
+    place-items: center;
+}
+
+.slides > *,
+.slides--infos > * {
+    grid-area: 1 / -1;
+}
+
+/*.slides {
+    flex: 1;               
+    display: flex;            
+    justify-content: flex-end; 
+}
+
+.slides--infos {
+    flex: 1;                  
+    display: flex;            
+    flex-direction: column;   
+    justify-content: center;  
+    padding-left: 20px;       
+}*/
+
+
+/* Slide styles */
+.slide {
+    --slide-tx: 0px;
+    --slide-ty: 0vh;
+    --slide-tz: 0px;
+    --slide-rotY: 0deg;
+    --slide-scale: 1;
+
+    width: var(--slide-width);
+    height: auto;
+    aspect-ratio: var(--slide-aspect);
+    user-select: none;
+    perspective: 800px;
+    transform: perspective(1000px)
+        translate3d(var(--slide-tx), var(--slide-ty), var(--slide-tz))
+        rotateY(var(--slide-rotY)) scale(var(--slide-scale));
+    transition: transform var(--slide-transition-duration)
+        var(--slide-transition-easing);
+}
+
+.slide[data-current] {
+    --slide-scale: 1.2;
+    --slide-tz: 0px;
+    --slide-tx: 0px;
+    --slide-rotY: 0deg;
+    pointer-events: auto;
+}
+
+.slide[data-next] {
+    --slide-tx: calc(1 * var(--slide-width) * 1.07);
+    --slide-rotY: -45deg;
+}
+
+.slide[data-previous] {
+    --slide-tx: calc(-1 * var(--slide-width) * 1.07);
+    --slide-rotY: 45deg;
+}
+
+.slide:not([data-current]) {
+    --slide-scale: 1;
+    --slide-tz: 0px;
+    pointer-events: none;
+}
+
+.slide__inner {
+    --rotX: 0deg;
+    --rotY: 0deg;
+    --bgPosX: 0%;
+    --bgPosY: 0%;
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: rotateX(var(--rotX)) rotateY(var(--rotY));
+}
+
+.slide--image__wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slide--image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    object-fit: cover;
+    transform: translate(-50%, -50%) scale(1.25)
+        translate3d(var(--bgPosX), var(--bgPosY), 0);
+    transition: filter var(--slide-transition-duration)
+        var(--slide-transition-easing);
+}
+
+.slide[data-current] .slide--image {
+    filter: brightness(0.8);
+}
+
+.slide:not([data-current]) .slide--image {
+    filter: brightness(0.5);
+}
+
+/* Slide background styles */
+.slide__bg {
+    position: fixed;
+    inset: -20%;
+    background-image: var(--bg);
+    background-size: cover;
+    background-position: center center;
+    z-index: -1;
+    pointer-events: none;
+    transition: opacity var(--slide-transition-duration) ease,
+        transform var(--slide-transition-duration) ease;
+}
+
+.slide__bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+}
+
+.slide__bg:not([data-current]) {
+    opacity: 0;
+}
+
+.slide__bg[data-previous] {
+    transform: translateX(-10%);
+}
+
+.slide__bg[data-next] {
+    transform: translateX(10%);
+}
+
+/* Slide info styles */
+.slide-info {
+    position: relative;
+    width: var(--slide-width);
+    height: 100%;
+    aspect-ratio: var(--slide-aspect);
+    user-select: none;
+    perspective: 800px;
+    z-index: 100;
+}
+
+.slide-info__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: rotateX(var(--rotX)) rotateY(var(--rotY));
+}
+
+.slides__wrapper {
+    display: flex;            /* Align cards and descriptions side by side */
+    justify-content: space-between; /* Spread out the space between them */
+    align-items: center;      /* Vertically center align */
+    width: 100%;              /* Ensure it takes full width */
+    margin-bottom: 20px;      /* Add some spacing at the bottom */
+}
+
+
+.slide-info--text__wrapper {
+    --z-offset: 45px;
+    position: absolute;
+    height: fit-content;
+    left: -15%;
+    bottom: 15%;
+    transform: translateZ(var(--z-offset));
+    z-index: 2;
+    pointer-events: none;
+}
+
+.slide-info--text {
+    font-family: var(--font-clash-display);
+    color: #fff;
+    overflow: hidden;
+}
+
+.slide-info--text span {
+    display: block;
+    white-space: nowrap;
+    transition: var(--slide-transition-duration) var(--slide-transition-easing);
+    transition-property: opacity, transform;
+}
+
+.slide-info[data-current] .slide-info--text span {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition-delay: 250ms;
+}
+
+.slide-info:not([data-current]) .slide-info--text span {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+    transition-delay: 0ms;
+}
+
+.slide-info--text[data-title],
+.slide-info--text[data-subtitle] {
+    font-size: min(3cqw, 2.4rem);
+    font-weight: 800;
+    letter-spacing: 0.2cqw;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+.slide-info--text[data-subtitle] {
+    margin-left: 2cqw;
+    font-size: min(2.2cqw, 1.8rem);
+    font-weight: 600;
+}
+
+.slide-info--text[data-description] {
+    margin-left: 1cqw;
+    font-size: min(1.5cqw, 0.95rem);
+    font-family: var(--font-archivo);
+    font-weight: 300;
+}
+
+/* Loader styles */
+.loader {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background: #000;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
+
+.loader__text {
+    font-family: var(--font-clash-display);
+    font-size: clamp(2rem, 2vw, 5rem);
+    font-weight: 800;
+    color: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    :root {
+        --slide-width: min(70vw, 300px);
+    }
+
+    .slider {
+        width: calc(1.5 * var(--slide-width));
+    }
+
+    .slide-info--text[data-title],
+    .slide-info--text[data-subtitle] {
+        font-size: min(4cqw, 1.8rem);
+    }
+
+    .slide-info--text[data-description] {
+        font-size: min(2.5cqw, 0.9rem);
+    }
+}
